@@ -1,0 +1,3 @@
+# frappe -- https://github.com/frappe/frappe is installed via 'bench init'
+pdf2image==1.16.0
+Pillow==8.4.0

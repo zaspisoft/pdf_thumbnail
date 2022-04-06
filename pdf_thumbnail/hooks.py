@@ -97,7 +97,7 @@ app_license = "MIT"
 
 doc_events = {
 	"File": {
-		"after_insert": "pdf_thumbnail.generate_thumbnail"
+		"before_save": "pdf_thumbnail.generate_thumbnail"
 	}
 }
 

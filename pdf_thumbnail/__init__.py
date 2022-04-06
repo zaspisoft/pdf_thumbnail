@@ -13,10 +13,17 @@ def get_file_path(doc):
 	else:
 		return base + '/public' + doc.file_url
 
+def is_pdf(name):
+	j =  name.split('.')
+
+	if len(j) > 1:
+		return j.pop().lower() == 'pdf'
+	else:
+		return False
 
 def generate_thumbnail(doc, event=None):
 
-	if not doc.file_name.endswith('pdf'):
+	if not is_pdf(doc.file_name):
 		return
 
 	if doc.image:
@@ -29,5 +36,3 @@ def generate_thumbnail(doc, event=None):
 		url_path = "/files/{}_thumbnail.jpeg".format(doc.name)
 		pages[0].save(image_path, 'JPEG')
 		doc.image = url_path
-
-

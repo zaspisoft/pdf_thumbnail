@@ -30,7 +30,7 @@ def generate_thumbnail(doc, event=None):
 		return
 	
 	file_path = get_file_path(doc)
-	pages = convert_from_path(file_path, 500)
+	pages = convert_from_path(file_path)
 	if len(pages) >= 1:
 		image_path = "{}/public/files/{}_thumbnail.jpeg".format(frappe.get_site_path(), doc.name)
 		url_path = "/files/{}_thumbnail.jpeg".format(doc.name)
